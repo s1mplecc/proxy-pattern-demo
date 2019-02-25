@@ -10,7 +10,7 @@ public class HibernateApp {
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
 
-        User user = (User) session.load(User.class, 1);
+        User user = session.load(User.class, 1);
         System.out.println("Class name: " + user.getClass().getName());
         System.out.println("Superclass name: " + user.getClass().getSuperclass().getName());
         for (Class<?> anInterface : user.getClass().getInterfaces()) {
